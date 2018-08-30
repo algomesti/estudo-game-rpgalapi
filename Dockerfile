@@ -5,6 +5,7 @@ RUN apt-get -y update
 RUN apt-get -y install git 
 RUN apt-get -y install apache2 
 RUN apt-get -y install php7.2
+RUN apt-get -y install zip unzip php-zip
 RUN apt-get -y install libapache2-mod-php7.2 
 RUN apt-get -y install php7.2-xml
 RUN apt-get -y install php-mbstring
