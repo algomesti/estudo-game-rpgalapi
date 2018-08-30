@@ -2,6 +2,7 @@ FROM ubuntu:18.04
 ARG DEBIAN_FRONTEND=newt
 
 RUN apt-get -y update
+RUN apt-get -y install git 
 RUN apt-get -y install apache2 
 RUN apt-get -y install php7.2
 RUN apt-get -y install libapache2-mod-php7.2 
