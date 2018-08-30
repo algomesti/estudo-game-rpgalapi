@@ -1,6 +1,6 @@
 # rpgalapi
 
-Start:
+Start :
 
 make up -e PORT_LOC={{PORT}}
 
@@ -16,7 +16,7 @@ o serviço ficará acessível em
 
 localhost:8001/public
 
-Stop
+Stop :
 
 make down -e PORT_LOC={{PORT}}
 
