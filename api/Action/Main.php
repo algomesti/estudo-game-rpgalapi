@@ -43,13 +43,29 @@ final class Main extends Action {
         $objSession = new Session($this->redis);
         $session = $objSession->createSession($chars);
         
-        echo json_encode($session);
+        //echo json_encode($session);
+        print_r($session); 
 
     }
     
     public function token ($request, $response, $args) {
         $objSession = new Session($this->redis);
         $session = $objSession->getSession($args['token']);
+        //echo json_encode($session);
+       
+        print_r($session);
+    }
+    
+    public function start ($request, $response, $args) {
+        $objSession = new Session($this->redis);
+        $session = $objSession->start($args['token']);
+        //echo json_encode($session);
+        print_r($session);
+    }
+    
+    public function fight ($request, $response, $args) {
+        $objSession = new Session($this->redis);
+        $session = $objSession->fight($args['token']);
         echo json_encode($session);
         
 
