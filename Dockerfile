@@ -11,6 +11,7 @@ RUN apt-get -y install php7.2-xml
 RUN apt-get -y install php-mbstring
 RUN apt-get -y install mcrypt nano wget
 RUN apt-get -y install locales
+RUN apt-get -y install redis-server
 RUN locale-gen fr_FR.UTF-8
 RUN locale-gen en_US.UTF-8
 RUN locale-gen de_DE.UTF-8
@@ -30,6 +31,7 @@ RUN find /var/www -type f -exec chmod 664 {} +
 
 COPY ./script/composer_download.sh /usr/local/bin
 RUN composer_download.sh
+#RUN redis-server --daemonize yes
 EXPOSE 80
 
 CMD ["/usr/sbin/apache2ctl","-DFOREGROUND"]

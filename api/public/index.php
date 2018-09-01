@@ -1,4 +1,5 @@
 <?php
+
 if (PHP_SAPI == 'cli-server') {
     // To help the built-in PHP dev server, check if the request was actually for
     // something which should probably be served as a static file
@@ -12,19 +13,25 @@ if (PHP_SAPI == 'cli-server') {
 require __DIR__ . '/../vendor/autoload.php';
 
 session_start();
+require_once '../config/config.php';
 
 // Instantiate the app
-$settings = require __DIR__ . '/../src/settings.php';
+//$settings = require __DIR__ . '/../src/settings.php';
+
+$settings['settings'] = $config;
+
 $app = new \Slim\App($settings);
 
 // Set up dependencies
-require __DIR__ . '/../src/dependencies.php';
+require __DIR__ . '/../config/dependencies.php';
 
 // Register middleware
-require __DIR__ . '/../src/middleware.php';
+require __DIR__ . '/../middleware.php';
 
 // Register routes
-require __DIR__ . '/../src/routes.php';
+require __DIR__ . '/../Action/Action.php';
+require __DIR__ . '/../Action/Main.php';
+require __DIR__ . '/../routes.php';
 
 // Run app
 $app->run();

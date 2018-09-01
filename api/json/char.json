@@ -1,0 +1,62 @@
+[
+    {
+        "code": "1",
+        "name": "Lagrendnaz",
+        "race_code": 1,
+        "weapon": 0,
+        "force": 0,
+        "agility": 0,
+        "life": 0,
+        "image": "https://hexcompendium.com/images/thumb/7/74/OrcBrute.png/501px-OrcBrute.png"
+    },
+    {
+        "code": "2",
+        "name": "Graelurk",
+        "race_code": 1,
+        "weapon": 0,
+        "force": 0,
+        "agility": 0,
+        "life": 0,
+        "image": "https://1d4chan.org/images/thumb/d/d8/Orc.jpg/400px-Orc.jpg"
+    },
+    {
+        "code": "3",
+        "name": "Abrukmuz",
+        "race_code": 1,
+        "weapon": 0,
+        "force": 0,
+        "agility": 0,
+        "life": 0,
+        "image": "https://db4sgowjqfwig.cloudfront.net/campaigns/110358/assets/457154/tumblr_nk86fbMOb71trscm8o1_1280.jpg?1431128630"
+    },
+    {
+        "code": "4",
+        "name": "Thorrichsere",
+        "race_code": 2,
+        "weapon": 1,
+        "force": 0,
+        "agility": 0,
+        "life": 0,
+        "image": "https://i.pinimg.com/originals/7d/8e/7b/7d8e7b9716732851a9fe3269c627cf3a.jpg"
+    },
+    {
+        "code": "5",
+        "name": "Sammadod",
+        "race_code": 2,
+        "weapon": 1,
+        "force": 0,
+        "agility": 0,
+        "life": 0,
+        "image": "https://i.pinimg.com/564x/36/8f/93/368f93edbe20d8f6d6e08cb8b818470b.jpg"
+    },
+    {
+        "code": "6",
+        "name": "Canredcen",
+        "race_code": 2,
+        "weapon": 1,
+        "force": 0,
+        "agility": 0,
+        "life": 0,
+        "image": "https://i.pinimg.com/originals/10/53/58/105358fb7e9404164d97a6ca3f3b85a3.jpg"
+    }
+]

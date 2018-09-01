@@ -4,10 +4,10 @@
 $container = $app->getContainer();
 
 // view renderer
-$container['renderer'] = function ($c) {
-    $settings = $c->get('settings')['renderer'];
-    return new Slim\Views\PhpRenderer($settings['template_path']);
-};
+//$container['renderer'] = function ($c) {
+//    $settings = $c->get('settings')['renderer'];
+//    return new Slim\Views\PhpRenderer($settings['template_path']);
+//};
 
 // monolog
 $container['logger'] = function ($c) {
@@ -16,4 +16,10 @@ $container['logger'] = function ($c) {
     $logger->pushProcessor(new Monolog\Processor\UidProcessor());
     $logger->pushHandler(new Monolog\Handler\StreamHandler($settings['path'], $settings['level']));
     return $logger;
+};
+
+$container['redis'] = function ($c) {
+    $settings = $c->get('settings')['redis'];
+    $redis = new \Predis\Client(array("host"=>$settings['host'], "port"=>$settings['port']));
+   return $redis;
 };

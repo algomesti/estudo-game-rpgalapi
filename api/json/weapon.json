@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Clava Madeira",
+        "damage": 1,
+        "defense": 0,
+        "image":"https://baby-ams.weebly.com/uploads/2/4/4/6/24465180/8983596.jpg?195"
+    },
+    {
+        "name": "Espada Longa",
+        "damage": 2,
+        "defense": 1,
+        "image": "http://medievalsystem.weebly.com/uploads/6/3/6/3/6363280/302247112.png"
+    }
+]

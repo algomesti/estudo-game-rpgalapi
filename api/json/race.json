@@ -1,0 +1,20 @@
+[
+    {
+        "code": "1",
+        "name": "orc",
+        "force": 2,
+        "agility": 0,
+        "life": 20,
+        "damage_dices":[8],
+        "image":"https://pre00.deviantart.net/aab5/th/pre/f/2015/226/8/5/orc_boss_enemy_by_babaganoosh99-d95oy3r.png"
+    },
+    {
+        "code": "2",
+        "name": "human",
+        "force": 1,
+        "agility": 2,
+        "life": 12,
+        "damage_dices":[6],
+        "image": "https://orig00.deviantart.net/0a19/f/2017/329/5/6/concept_art_carlnes_by_aenaluck-dbuvrv9.jpg"
+    }
+]
