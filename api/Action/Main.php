@@ -2,14 +2,12 @@
 
 namespace App\Action;
 
-require_once '../Models/Token.php';
 require_once '../Models/Race.php';
 require_once '../Models/Char.php';
 require_once '../Models/Weapon.php';
 require_once '../Models/Session.php';
 
 use App\Action\Action as Action;
-use App\Models\Token as Token;
 use App\Models\Race as Race;
 use App\Models\Char as Char;
 use App\Models\Weapon as Weapon;
@@ -26,8 +24,8 @@ final class Main extends Action {
     
     public function play ($request, $response, $args) {
         
-        $objToken = new Token();
-        $token = $objToken->getToken();
+        //$objToken = new Token();
+        //$token = $objToken->getToken();
         
         $objRace = new Race();
         $races = $objRace->chooseRaces();
@@ -43,9 +41,8 @@ final class Main extends Action {
         $chars[1]['weapon'] = $objWeapon->indexToWeapon($chars[1]['weapon']);
         
         $objSession = new Session($this->redis);
-        $objSession->createSession($token, $chars);
+        $session = $objSession->createSession($chars);
         
-        $session = $objSession->getSession($token);
         echo json_encode($session);
 
     }
