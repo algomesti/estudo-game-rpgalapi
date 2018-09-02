@@ -76,15 +76,10 @@ class Session {
     
     public function fight($token) {
         $iniciativa = $this->verifyPlayerIniciative($token);
-       // print_r($iniciativa);
-        
-    // verificar iniciativa
         $success = $this->attackSuccess($iniciativa['player_primary'], $iniciativa['player_secondary']);
-       // var_dump($success);
         if($success) {
             $this->attackDamage($iniciativa['player_primary'], $iniciativa['player_secondary']);
         }
-        
         $player_secondary = $this->getPlayerByToken($iniciativa['player_secondary']);
         $life_player_secondary = $player_secondary['life'];
         if($life_player_secondary) {
@@ -101,8 +96,7 @@ class Session {
         } else {
             $array['player_secondary'] = $session['player1'];
         }
-        
-        
+         
         return $array;
     } 
     
@@ -142,21 +136,8 @@ class Session {
         $life = ($defense['life_update'] > 0) ? $defense['life_update'] : 0 ;  
         $array['life'] = $life;
         return $this->save($playerDefense, $array, 2000);
-    }
-    
-    private function setDamage($player, $damage) {
-        
-    }
-    
-    private function updateShift($token) {
-        
-    }
-    
-
-
-
-
-
+    }   
+ 
     private function setIniciative($token, $tokenPlayer) {
         $dataShift['iniciative'] = $tokenPlayer;
         $dataPlayer['iniciative'] = 1;

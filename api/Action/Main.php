@@ -15,21 +15,11 @@ use App\Models\Session as Session;
 
 
 final class Main extends Action {
-    
-    public function index($request, $response, $args) {
         
-        $session=[];
-        echo json_encode($session);
-    }
-    
     public function play ($request, $response, $args) {
-        
-        //$objToken = new Token();
-        //$token = $objToken->getToken();
-        
+
         $objRace = new Race();
         $races = $objRace->chooseRaces();
-        
         
         $objChar = new Char();
         $chars = $objChar->chooseChar($races);
@@ -42,33 +32,25 @@ final class Main extends Action {
         
         $objSession = new Session($this->redis);
         $session = $objSession->createSession($chars);
-        
-        //echo json_encode($session);
-        print_r($session); 
-
+        $response->write(json_encode($session));
     }
     
     public function token ($request, $response, $args) {
         $objSession = new Session($this->redis);
         $session = $objSession->getSession($args['token']);
-        //echo json_encode($session);
-       
-        print_r($session);
+        $response->write(json_encode($session));
     }
     
     public function start ($request, $response, $args) {
         $objSession = new Session($this->redis);
         $session = $objSession->start($args['token']);
-        //echo json_encode($session);
-        print_r($session);
+        $response->write(json_encode($session));
     }
     
     public function fight ($request, $response, $args) {
         $objSession = new Session($this->redis);
         $session = $objSession->fight($args['token']);
-        echo json_encode($session);
-        
-
+        $response->write(json_encode($session));
     }
     
 }

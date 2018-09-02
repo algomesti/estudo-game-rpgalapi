@@ -11,7 +11,21 @@ class Race {
     } 
     
     public function chooseRaces() {
+        
         $races = $this->getRaces();
-        return array($races[0], $races[1]);
+        
+        $indice_p1 = rand(0, count($races)-1);
+        $r[0] = $races[$indice_p1];
+        
+        $race_filter = array();
+        for ($f = 0 ; $f < count($races); $f ++) {
+            if($f != $indice_p1) {
+                $race_filter[$f] = $races[$f];
+            }
+        } 
+        $race_filter =array_values($race_filter);
+        $indice_p2 = rand(0, count($race_filter)-1);
+        $r[1] = $race_filter[$indice_p2];
+        return $r;
     }
 }
