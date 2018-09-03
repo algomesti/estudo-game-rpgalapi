@@ -1,0 +1,25 @@
+<center>
+    <table>
+        <tr>
+            <td>
+                <div class="win_title">
+                    VENCEDOR
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="person_name win_name">
+                    <?php 
+                        echo $data->player->name; 
+                    ?>
+                </div>
+           </td>
+        </tr>
+        <tr>
+            <td class="win_image">
+                <img src="<?php echo $data->player->image?>" height="200px">
+            </td>
+        </tr>
+    </table>
+</center>

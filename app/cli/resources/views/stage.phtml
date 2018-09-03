@@ -1,0 +1,40 @@
+<table>
+    <tr>
+        <td width="25%">
+            <table>
+                <tr><td colspan="2"><div  class="person_name" id="person_name" ><?php echo $data->player1->name; 
+                    if(isset($data->player1->iniciative) && $data->player1->iniciative == true ) {
+                        echo " (iniciativa)";
+                    }
+                ?></div></td></tr>
+                <tr><td><div class="val val1"><?php echo $data->player1->race_name; ?></div></td><td><div class="key key1">: Raça</div></td></tr>
+                <tr><td><div class="val val1"><?php echo $data->player1->force; ?></div></td><td><div class="key key1">: Força</div></td></tr>
+                <tr><td><div class="val val1"><?php echo $data->player1->agility; ?></div></td><td><div class="key key1">: Agilidade</div></td></tr>
+                <tr><td><div class="val val1"><?php echo "1d".$data->player1->damage_dice; ?></div></td><td><div class="key key1">: Dado de Dano</div></td></tr>                    
+                <tr><td><div class="val val1"><?php echo $data->player1->weapon_name; ?></div></td><td><div class="key key1">: Arma</div></td></tr>
+                <tr><td><div class="val val1"><?php echo $data->player1->weapon_damage; ?></div></td><td><div class="key key1">: Dano da Arma</div></td></tr>
+                <tr><td><div class="val val1"><?php echo $data->player1->weapon_defense; ?></div></td><td><div class="key key1">: Defesa da Arma</div></td></tr>                        
+                <tr><td><div class="val val1 life"><?php echo $data->player1->life; ?></div></td><td><div class="key key1">: Vida</div></td></tr>                        
+            </table>
+        </td>
+        <td width="20%" ><img src="<?php echo $data->player1->image?>" height="210px"></td>
+        <td width="10%"> <div id="x" class="x">X</div></td>
+        <td width="20%"><img src="<?php echo $data->player2->image?>"height="210px"></td>
+        <td width="25%">
+            <table>
+                <tr><td colspan="2"><div  class="person_name" id="person_name" ><?php echo $data->player2->name; 
+                if(isset($data->player2->iniciative) && $data->player2->iniciative == true ) {
+                        echo " (iniciativa)";
+                    }?></div></td></tr>
+                <tr><td><div class="key key2">Raça:</div> </td><td><div class="val val2"><?php echo $data->player2->race_name; ?></div></td></tr>
+                <tr><td><div class="key key2">Força:</div> </td><td><div class="val val2"><?php echo $data->player2->force; ?></div></td></tr>
+                <tr><td><div class="key key2">Agilidade:</div> </td><td><div class="val val2"><?php echo $data->player2->agility; ?></div></td></tr>
+                <tr><td><div class="key key2">Dado de Dano:</div> </td><td><div class="val val2"><?php echo "1d".$data->player2->damage_dice; ?></div></td></tr>                    
+                <tr><td><div class="key key2">Arma:</div> </td><td><div class="val val2"><?php echo $data->player2->weapon_name; ?></div></td></tr>
+                <tr><td><div class="key key2">Dano da Arma:</div> </td><td><div class="val val2"><?php echo $data->player2->weapon_damage; ?></div></td></tr>
+                <tr><td><div class="key key2">Defesa da Arma:</div> </td><td><div class="val val2"><?php echo $data->player2->weapon_defense; ?></div></td></tr>                        
+                <tr><td><div class="key key2">Vida:</div> </td><td><div class="val val2 life"><?php echo $data->player2->life; ?></div></td></tr>                        
+            </table>
+        </td>
+    </tr>
+</table>

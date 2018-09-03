@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <?php require_once 'resources/views/head.phtml' ?>
+    </head>
+    <body>
+        <?php require_once 'resources/views/header.phtml' ?>
+        <?php require_once 'resources/views/stage.phtml' ?>
+        <div id="actions" class="actions">
+            <button onclick="window.location='/cli/fight/<?php echo $data->token; ?>'" value="START">LUTAR</button>
+        </div>
+    </body>
+</html>

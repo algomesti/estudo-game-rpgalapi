@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <?php require_once 'resources/views/head.phtml' ?>
+    </head>
+    <body>
+        <div id="container" class="container">
+            <?php require_once 'resources/views/header.phtml' ?>
+            <?php require_once 'resources/views/stage.phtml' ?>
+            <div id="actions" class="actions">
+                <button onclick="window.location='/cli/start/<?php echo $data->token; ?>'" value="START">START</button>
+            </div>
+        </div>
+        
+    </body>
+</html>
