@@ -20,8 +20,7 @@ final class Main extends Action {
         $this->logger->debug('PATH: \play | ARGS:'. json_encode($args) . 'RESP: '. json_encode($vars));
         if(!$vars['data']) {
             return  $this->view->render($response, 'server_error.phtml');
-        }
-        
+        }        
         return  $this->view->render($response, 'play.phtml', $vars);
     }
     

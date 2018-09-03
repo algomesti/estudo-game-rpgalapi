@@ -25,31 +25,33 @@ final class Main extends Action {
         $chars = $objChar->chooseChar($races);
         $chars[0]['race']=$races[0];
         $chars[1]['race']=$races[1]; 
-        
         $objWeapon = new Weapon();
         $chars[0]['weapon'] = $objWeapon->indexToWeapon($chars[0]['weapon']);
         $chars[1]['weapon'] = $objWeapon->indexToWeapon($chars[1]['weapon']);
-        
         $objSession = new Session($this->redis);
         $session = $objSession->createSession($chars);
+        $this->logger->debug('PATH: \play | ARGS:'. json_encode($args) . 'RESP: '. json_encode($session));
         $response->write(json_encode($session));
     }
     
     public function token ($request, $response, $args) {
         $objSession = new Session($this->redis);
         $session = $objSession->getSession($args['token']);
+        $this->logger->debug('PATH: \play | ARGS:'. json_encode($args) . 'RESP: '. json_encode($session));
         $response->write(json_encode($session));
     }
     
     public function start ($request, $response, $args) {
         $objSession = new Session($this->redis);
         $session = $objSession->start($args['token']);
+        $this->logger->debug('PATH: \play | ARGS:'. json_encode($args) . 'RESP: '. json_encode($session));
         $response->write(json_encode($session));
     }
     
     public function fight ($request, $response, $args) {
         $objSession = new Session($this->redis);
         $session = $objSession->fight($args['token']);
+        $this->logger->debug('PATH: \play | ARGS:'. json_encode($args) . 'RESP: '. json_encode($session));
         $response->write(json_encode($session));
     }
     
