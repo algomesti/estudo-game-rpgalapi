@@ -79,23 +79,29 @@ class Session {
     }
     
     public function fight($token) {
-        if( $this->verifyStatus($token) == false ) {
-            echo 'Status é false';
-            return ;
-        } else {
-            echo 'STATUS é TRUE';
-        }
+        if( $this->verifyStatus($token) == false ) return ;
         $iniciativa = $this->verifyPlayerIniciative($token);
         $success = $this->attackSuccess($iniciativa['player_primary'], $iniciativa['player_secondary']);
+        $d1=$d2=0;
         if($success) {
-            $this->attackDamage($iniciativa['player_primary'], $iniciativa['player_secondary']);
+            $d1 = $this->attackDamage($iniciativa['player_primary'], $iniciativa['player_secondary']);
         }
         $player_secondary = $this->getPlayerByToken($iniciativa['player_secondary']);
         $life_player_secondary = $player_secondary['life'];
         if($life_player_secondary) {
-            $this->attackDamage($iniciativa['player_secondary'], $iniciativa['player_primary']);
+            $success2 = $this->attackSuccess($iniciativa['player_secondary'], $iniciativa['player_primary']);
+            if($success2) {
+                $d2 = $this->attackDamage($iniciativa['player_secondary'], $iniciativa['player_primary']);        
+            }
         } 
         $this->verifyResultShift($token);
+        
+        $res['player1']['attackSuccess'] = $success;
+        $res['player1']['attackdamage']  = $d1;
+        $res['player2']['attackSuccess'] = $success2;
+        $res['player2']['attackdamage']  = $d2;
+
+        return $res;
                 
     }
     
@@ -162,7 +168,11 @@ class Session {
         $life = ($defense['life_update'] > 0) ? $defense['life_update'] : 0 ;  
         $array['life'] = $life;
         
-        return $this->save($playerDefense, $array, 2000);
+        $this->save($playerDefense, $array, 2000);
+        $res['attack'] = $attack;
+        $res['defense'] = $defense;
+        
+        return $res;
     }   
  
     private function setIniciative($token, $tokenPlayer) {
