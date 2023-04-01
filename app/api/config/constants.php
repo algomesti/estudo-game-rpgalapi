@@ -1,11 +1,8 @@
 <?php
 use Monolog\Logger as logger;
 define('APPNAME','rpgalapi');
-
 define('LOG_NAME', APPNAME );
 define('LOG_PATH', isset($_ENV['docker']) ? 'php://stdout' : __DIR__ . '/../logs/app.log' );
-//echo LOG_PATH;
-//die();
 define('LOG_LEVEL', logger::DEBUG );
 
 define('REDIS_HOST', 'localhost');
