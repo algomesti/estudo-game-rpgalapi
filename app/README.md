@@ -280,7 +280,7 @@ localhost:8001/cli/
 	```
 - Exemplo de Resposta:
 
-	```
+```
 {
 	"player1": {
 		"attackSuccess": true,
